@@ -16,26 +16,11 @@ Este repositorio de GitHub contiene los códigos desarrollados para el Desafío 
 
 El preprocesamiento de los datos se realizó utilizando el archivo CSV `sales.csv`. Se eliminaron los registros de clientes del mes de noviembre de 2023 debido a que estos datos contenían valores nulos en `churn_next_month`, ya que son los datos de predicción. Posteriormente, la variable `month` se transformó a formato de fecha para permitir la ordenación y agrupación de los datos por `customer_id`. Esto facilitó la generación de columnas para la variable `amount` correspondientes a cada mes y registro. Además, se aplicó un padding al inicio de los registros para igualar la longitud de los arrays con menores datos de `amount`. Finalmente, se agregó el valor correspondiente de `churn_next_month` a cada registro.
 
-## Descripción Matemática del Preprocesamiento
-
-Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por $`\{\text{customer\_id}, \text{month}, \text{amount}, \text{churn\_next\_month}\}`$.
-
-1. **Filtrado de Datos Nulos:**
-   $`D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}`$
-
-2. **Conversión de Fecha y Agrupación:**
-   $`\text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])`$
-
-   $`D'' = D'.groupby(\text{customer\_id}).apply(\lambda x: x.sort\_values(by=\text{month\_formatted}))`$
-
-3. **Generación de Columnas por Mes:**
-   $`\text{amount\_by\_month} = D''.pivot(index=\text{customer\_id}, columns=\text{month\_formatted}, values=\text{amount})`$
-
-4. **Padding de Registros:**
-   $`\text{padded\_amounts} = \text{amount\_by\_month}.apply(\lambda x: x.pad(), axis=1)`$
-
-5. **Agregado de `churn_next_month`:**
-   $`D_{\text{final}} = \text{padded\_amounts}.merge(D'[['customer\_id', 'churn\_next\_month']], on=\text{customer\_id}, how=\text{left})`$
+## Modelo de predicción XGBoost con Ventana de Tiempo
 
 
-Este enfoque asegura que los datos estén adecuadamente preparados para el entrenamiento de los modelos de aprendizaje automático, mejorando la precisión en la predicción del churn de los clientes.
+
+## Modelo de predicción Random Forest con TDA
+
+## Algoritmo Mapper
+
