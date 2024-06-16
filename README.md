@@ -21,9 +21,7 @@ El preprocesamiento de los datos se realizó utilizando el archivo CSV `sales.cs
 Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por \( \{ \text{customer_id}, \text{month}, \text{amount}, \text{churn_next_month} \} \). 
 
 1. **Filtrado de Datos Nulos:**
-   \[
-   D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}
-   \]
+  $D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}$
 
 2. **Conversión de Fecha y Agrupación:**
    \[
