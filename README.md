@@ -18,28 +18,24 @@ El preprocesamiento de los datos se realizó utilizando el archivo CSV `sales.cs
 
 ## Descripción Matemática del Preprocesamiento
 
-Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por ${ \text{customer_id}, \text{month}, \text{amount}, \text{churn_next_month} }$. 
+Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por $`\{\text{customer\_id}, \text{month}, \text{amount}, \text{churn\_next\_month}\}`$.
 
 1. **Filtrado de Datos Nulos:**
-  \( D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \} \)
+   $`D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}`$
 
 2. **Conversión de Fecha y Agrupación:**
-    $`\text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])`$
+   $`\text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])`$
+
    $`D'' = D'.groupby(\text{customer\_id}).apply(\lambda x: x.sort\_values(by=\text{month\_formatted}))`$
 
 3. **Generación de Columnas por Mes:**
-   \[
-   \text{amount\_by\_month} = D''.pivot(index=\text{customer_id}, columns=\text{month\_formatted}, values=\text{amount})
-   \]
+   $`\text{amount\_by\_month} = D''.pivot(index=\text{customer\_id}, columns=\text{month\_formatted}, values=\text{amount})`$
 
 4. **Padding de Registros:**
-   \[
-   \text{padded\_amounts} = \text{amount\_by\_month}.apply(\lambda x: x.pad(), axis=1)
-   \]
+   $`\text{padded\_amounts} = \text{amount\_by\_month}.apply(\lambda x: x.pad(), axis=1)`$
 
 5. **Agregado de `churn_next_month`:**
-   \[
-   D_{\text{final}} = \text{padded\_amounts}.merge(D'[['customer_id', 'churn_next_month']], on=\text{customer_id}, how=\text{left})
-   \]
+   $`D_{\text{final}} = \text{padded\_amounts}.merge(D'[['customer\_id', 'churn\_next\_month']], on=\text{customer\_id}, how=\text{left})`$
+
 
 Este enfoque asegura que los datos estén adecuadamente preparados para el entrenamiento de los modelos de aprendizaje automático, mejorando la precisión en la predicción del churn de los clientes.
