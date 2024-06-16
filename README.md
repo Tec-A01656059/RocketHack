@@ -24,7 +24,7 @@ Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro 
   $D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}$
 
 2. **Conversión de Fecha y Agrupación:**
-   $\text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])$
+    $`\text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])`$
    $D'' = D'.groupby(\text{customer\_id}).apply(\lambda x: x.sort\_values(by=\text{month\_formatted}))$
 
 3. **Generación de Columnas por Mes:**
