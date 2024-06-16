@@ -18,18 +18,14 @@ El preprocesamiento de los datos se realizó utilizando el archivo CSV `sales.cs
 
 ## Descripción Matemática del Preprocesamiento
 
-Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por \( \{ \text{customer_id}, \text{month}, \text{amount}, \text{churn_next_month} \} \). 
+Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por $\{ \text{customer\_id}, \text{month}, \text{amount}, \text{churn\_next\_month} \}$. 
 
 1. **Filtrado de Datos Nulos:**
   $D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}$
 
 2. **Conversión de Fecha y Agrupación:**
-   \[
-   \text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])
-   \]
-   \[
-   D'' = D'.groupby(\text{customer_id}).apply(\lambda x: x.sort\_values(by=\text{month\_formatted}))
-   \]
+   $\text{month\_formatted} = \text{pd.to\_datetime}(D'[\text{month}])$
+   $D'' = D'.groupby(\text{customer\_id}).apply(\lambda x: x.sort\_values(by=\text{month\_formatted}))$
 
 3. **Generación de Columnas por Mes:**
    \[
