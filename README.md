@@ -10,7 +10,7 @@
 
 # Desafío 3: "Hackea el churn: anticipando e identificando la posible baja de clientes" - Rocket Hackathon 2024
 
-Este repositorio de GitHub contiene los códigos desarrollados para el Desafío 3 del Rocket Hackathon 2024, titulado "Hackea el churn: anticipando e identificando la posible baja de clientes". El objetivo de este desafío es predecir la deserción de clientes de los servicios de Arca Continental, la segunda embotelladora más grande de Latinoamérica, que abastece a más de 200,000 tienditas en la región con una amplia gama de productos de alta calidad. Para ello, se implementaron múltiples modelos de aprendizaje automático, optimizados para identificar con precisión a los clientes propensos a darse de baja.
+Este repositorio de GitHub contiene los códigos desarrollados para el Desafío 3 del Rocket Hackathon 2024, titulado "Hackea el churn: anticipando e identificando la posible baja de clientes". El objetivo de este desafío es predecir la deserción de clientes de los servicios de Arca Continental, la segunda embotelladora más grande de Latinoamérica, que abastece a más de 200,000 tienditas en la región. Para ello, se implementaron múltiples modelos de aprendizaje automático, optimizados para identificar con precisión a los clientes propensos a darse de baja.
 
 ## Preprocesamiento de los Datos
 
