@@ -18,7 +18,7 @@ El preprocesamiento de los datos se realizó utilizando el archivo CSV `sales.cs
 
 ## Descripción Matemática del Preprocesamiento
 
-Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por $\{ \text{customer\_id}, \text{month}, \text{amount}, \text{churn\_next\_month} \}$. 
+Sea \( D \) el conjunto de datos originales en `sales.csv`, donde cada registro está dado por ${ \text{customer_id}, \text{month}, \text{amount}, \text{churn_next_month} }$. 
 
 1. **Filtrado de Datos Nulos:**
   $D' = \{ d \in D \mid d[\text{month}] \neq \text{noviembre 2023} \}$
